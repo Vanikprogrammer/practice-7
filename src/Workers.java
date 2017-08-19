@@ -1,7 +1,29 @@
-package PACKAGE_NAME;
-
 /**
  * Created by 1 on 12.08.2017.
  */
-public class Workers {
+public abstract class Workers {
+    private String name;
+    private String surname;
+
+    public Workers(String name, String surname){
+        this.name = name;
+        this.surname = surname;
+    }
+    public abstract double salary();
+
+    public String getName() {
+        return name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
 }
