@@ -19,13 +19,13 @@ public class Company {
 
     public void showInfoWorkers(Workers[]w) {
         for (int i = 0; i < w.length; i++) {
-            if (w[i] instanceof HourlyPayment) {
+            if (w[i].getClass().getSimpleName().equals("HourlyPayment")) {
                 System.out.println("Почасовая " + w[i].getName() + " " + w[i].getSurname() + " " + w[i].salary());
             }
             if (w[i] instanceof FixedPayment) {
                 System.out.println("Оклад " + w[i].getName() + " " + w[i].getSurname() + " " + w[i].salary());
             }
-            if (w[i] instanceof FreeLans) {
+            if (w[i].getClass().getSimpleName().equals("FreeLans")) {
                 System.out.println("Фриланс " + w[i].getName() + " " + w[i].getSurname() + " " + w[i].salary());
             }
         }
@@ -83,7 +83,7 @@ public class Company {
 
     public void sortMinMax(Workers[]sort){
         Workers temp;
-        for(int i = sort.length - 1; i > 0; i--){
+        for(int i = sort.length - 1; i >= 0; i--){
             for(int j = 0; j < i; j++) {
                 if (sort[j].salary() > sort[j + 1].salary()) {
                     temp = sort[j];
